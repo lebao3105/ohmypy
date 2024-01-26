@@ -6,7 +6,7 @@ import sys
 import time
 
 from ohmypy.printtext import *
-from ohmypy.settings import PS1, PS2, ADD_COLORS
+from ohmypy.settings import ADD_COLORS
 from colorama import Fore, Back, Style
 
 # Colors

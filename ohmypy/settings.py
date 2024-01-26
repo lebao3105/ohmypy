@@ -18,6 +18,7 @@ AUTO_UPDATE: bool = True
 UPDATE_DELAY: str = "3 days"
 ACCEPT_RISKS: bool = False
 ADD_COLORS: bool
+ASK_ONCE_FRIK: bool = False
 
 try:
     import pretty_errors

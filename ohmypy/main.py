@@ -6,9 +6,10 @@ from ohmypy.settings import read_ohmypyRC
 
 orig_ps1: object = ">>> "
 orig_ps2: object = "... "
+
 read_ohmypyRC()
 
-from ohmypy.settings import PS2, PS1, ENV, PREEXE
+from ohmypy.settings import *
 from ohmypy.printtext import *
 from ohmypy.prompts import *
 
@@ -20,6 +21,8 @@ def initialize():
     Initialize the toolkit.
     """
     init(True)
+    sys.path.append(os.path.dirname(__file__) + "/..")
+    sys.path.append(os.path.expanduser("~/.oh-my-py"))
 
     sys.ps1 = ps1
     sys.ps2 = ps2
@@ -38,17 +41,7 @@ def deinitialize():
     sys.ps2 = orig_ps2
     deinit()
 
-def main():
-    """
-    The main entry point.
-    """
-    try:
-        initialize()
-    except Exception as e:
-        deinitialize()
-        raise e
-
 if ("PYTHONSTARTUP" in os.environ) and (os.environ["PYTHONSTARTUP"] != __file__):
     warning("Not running as a Python startup script")
 
-main()
+initialize()
