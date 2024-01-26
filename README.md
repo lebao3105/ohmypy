@@ -18,6 +18,8 @@ Working on these features:
 
 ### Wanna try? Let's go!
 
+Tested on Python 3.9 (jailbroken iOS) and Python 3.11 (Windows).
+
 Install this project. Then do one of these ways:
 
 * Set `PYTHONSTARTUP` environment variable to the full path of `ohmypy/main.py`
@@ -77,6 +79,34 @@ Add colors to prompts, if able and **asked** to.
 e. `PLUGINS_TO_LOAD` (list[str])
 
 Not implemented: plugins to load.
+
+### Example
+
+On `~/.ohmypy`:
+
+```python
+ENV = {"TEST": '6'}
+PS1 = "[%(ASCTIME)s, Python %(PYVER)s on %(ARCH)s %(OS)s]\n> %(RED_FORE)s%(USERNAME)s%(RESET_FORE)s %(CURRDIR)s$ "
+PS2 = "Indent: %(GREEN_FORE)s>>> %(RESET_FORE)s"
+```
+
+Run Python will see something like this, next to the general Python message:
+
+```
+[Fri Jan 26 21:11:14 2024, Python 3.11.5 on ('64bit', 'WindowsPE') Windows-10-10.0.22631-SP0]
+> lebao3105 C:\Users\lebao3105\Projects\ohmypy$ for i in range(10):
+Indent: >>>     print(i)
+```
+
+It's your prompt!
+
+Test (default PS1):
+
+```python
+>>> import os
+>>> os.environ['TEST']
+'6'
+```
 
 ### Writing plugins
 

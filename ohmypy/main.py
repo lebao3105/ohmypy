@@ -43,5 +43,5 @@ def deinitialize():
 
 if ("PYTHONSTARTUP" in os.environ) and (os.environ["PYTHONSTARTUP"] != __file__):
     warning("Not running as a Python startup script")
-
-initialize()
+else:
+    initialize()
