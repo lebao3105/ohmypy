@@ -12,8 +12,8 @@ from ohmypy.settings import PS2, PS1, ENV, PREEXE
 from ohmypy.printtext import *
 from ohmypy.prompts import *
 
-ps1 = PromptString1() if PS1 else orig_ps1
-ps2 = PromptString2() if PS2 else orig_ps2
+ps1 = PromptString(PS1) if PS1 else orig_ps1
+ps2 = PromptString(PS2) if PS2 else orig_ps2
 
 def initialize():
     """

@@ -11,7 +11,7 @@ def print_colored_backfore(back: str, fore: str, message: str, style: str = "NOR
     target_fore = getattr(Fore, fore.upper()) if fore else ""
     target_style = getattr(Style, style.upper()) if style else ""
     print(f"{target_style}{target_color}{target_fore}{message}")
-    print(Style.RESET_ALL)
+    print(Style.RESET_ALL, end=None)
 
 def clear_screen(): print("\033[H\033[2J")
 def debug(message: str): print_colored_foreground("megenta", f"[DEBUG-OMP] {message}", "bright")
